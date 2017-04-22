@@ -2,15 +2,21 @@
 
 ## Predicting enhancers and regulatory regions <a name='genomics_enhancers'></a>
 
-Here the inputs are typically “raw” DNA sequence, and convolutional networks (or layers) are often used to learn regularities within the sequence. Hat tip to [Melissa Gymrek](http://melissagymrek.com/science/2015/12/01/unlocking-noncoding-variation.html) for pointing out some of these.
+Here the inputs are typically “raw” DNA sequence, and convolutional networks (or layers) are often used to learn regularities within the sequence. 
 
 **DanQ: a hybrid convolutional and recurrent deep neural network for quantifying the function of DNA sequences** [[github](https://github.com/uci-cbcl/DanQ)][[gitxiv](http://gitxiv.com/posts/aqrWwLoyg75jqNAYX/danq-a-hybrid-convolutional-and-recurrent-deep-neural)]
 
-Made for predicting the function of non-protein coding DNA sequence. Uses a convolution layer to capture regulatory motifs (i e single DNA snippets that control the expression of genes, for instance), and a recurrent layer (of the LSTM type) to try to discover a “grammar” for how these single motifs work together. Based on Keras/Theano.
+- **Purpose**: Made for predicting the function of non-protein coding DNA sequence. By Function, they mean predicting Protein binding and DNA accessibility (DNAse peaks and chip-seq peaks). 
+- **How**: Uses a convolution layer to capture regulatory motifs (i e single DNA snippets that control the expression of genes, for instance), and a recurrent layer (of the LSTM type) to try to discover a “grammar” for how these single motifs work together (A layer for looking at the distance between motifs). 
+- **Input**: Human [DeepSea](http://deepsea.princeton.edu/job/analysis/create/), 200 bp regions around TF binding Chip-Seq peaks. JASPAR for motifs.
+- **Implemented on**: Based on Keras/Theano. Combines Convolution Neural Nets (motifs) and Recurrent Neural Nets (distance between motifs).
 
 **Basset – learning the regulatory code of the accessible genome with deep convolutional neural networks** [[github](https://github.com/davek44/Basset)][[gitxiv](http://gitxiv.com/posts/fhET6G7gnBrGS8S9u/basset-learning-the-regulatory-code-of-the-accessible-genome)]
 
-Based on Torch, this package focuses on predicting the accessibility (or “openness”) of the chromatin – the physical packaging of the genetic information (DNA+associated proteins). This can exist in more condensed or relaxed states in different cell types, which is partly influenced by the DNA sequence (not completely, because then it would not differ from cell to cell.)
+-  **Purpose**: Predict cell-specific DNA accessibility and protein binding motifs for specific cell types.
+- **How**: This package focuses on predicting the accessibility (or “openness”) of the chromatin – the physical packaging of the genetic information (DNA+associated proteins). This can exist in more condensed or relaxed states in different cell types, which is partly influenced by the DNA sequence (not completely, because then it would not differ from cell to cell.)
+- **Input**:
+- **Implemented with**: Based on [Torch](http://torch.ch/)
 
 **DeepSEA – Predicting effects of noncoding variants with deep learning–based sequence model** [[web server](http://deepsea.princeton.edu/job/analysis/create/)][[paper](http://www.nature.com/nmeth/journal/v12/n10/full/nmeth.3547.html)]
 

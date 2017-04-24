@@ -1,4 +1,6 @@
-# MLresources
+# Machine Learning to understand syntactic patterning of enhancers
+
+This is a repository to keep track of all work that has been done in the purpose of understanding function in non-coding regions of the genome. 
 
 ## Predicting enhancers and regulatory regions <a name='genomics_enhancers'></a>
 
@@ -25,7 +27,7 @@ Here the inputs are typically “raw” DNA sequence, and convolutional networks
 - **Purpose**: Predict large-scale chromatin-profiling data, including TF binding, DNase I sensitivity and histone-mark profiles. Like the packages above, this one also models chromatin accessibility as well as the binding of certain proteins (transcription factors) to DNA and the presence of so-called histone marks that are associated with changes in accessibility. This piece of software seems to focus a bit more explicitly than the others on predicting how single-nucleotide mutations affect the chromatin structure.
 - **How**: A deep convolutional network is a type of multilayer neural network. Integrating sequence information from a wide sequence context, learning sequence code at multiple spatial scales with a hierarchical architecture, and multitask joint learning of diverse chromatin factors sharing predictive features. 
 -  **Input/ Training Data**: genome-wide chromatin profiles from the Encyclopedia of DNA Elements (ENCODE) and Roadmap Epigenomics projects. 690 TF binding profiles for 160 different TFs, 125 DHS profiles and 104 histone-mark profiles. Used conservation information ("evolutionary conservation") scores using PhastCons. 
-- **Implemented with** - They made their own implementiation and have a web server, but all the code is hidden. Which sucks and is unuasable outside humans.
+- **Implemented with** - They made their own implementiation and have a web server, but all the code is hidden. Which sucks and is unuasable outside humans...or is it? 
 
 **DeepBind – Predicting the sequence specificities of DNA- and RNA-binding proteins by deep learning** [[code](http://tools.genes.toronto.edu/deepbind/)][[paper](http://www.nature.com/nbt/journal/v33/n8/full/nbt.3300.html)]
 

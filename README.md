@@ -1,10 +1,6 @@
-# Machine Learning in non-coding genomic regions
+## Predicting enhancers and regulatory regions 
 
-This is a repository to keep track of all work that has been done in the purpose of understanding function in non-coding regions of the genome. 
-
-## Predicting enhancers and regulatory regions <a name='genomics_enhancers'></a>
-
-Here the inputs are typically “raw” DNA sequence, and convolutional networks (or layers) are often used to learn regularities within the sequence. 
+Collection of papers that use machine learning to predict "function" in non-coding regions. Here the inputs are typically “raw” DNA sequence, and convolutional networks (or layers) are often used to learn regularities within the sequence. 
 
 **DanQ: a hybrid convolutional and recurrent deep neural network for quantifying the function of DNA sequences** [[github](https://github.com/uci-cbcl/DanQ)][[gitxiv](http://gitxiv.com/posts/aqrWwLoyg75jqNAYX/danq-a-hybrid-convolutional-and-recurrent-deep-neural)]
 

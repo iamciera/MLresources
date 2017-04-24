@@ -1,4 +1,4 @@
-# Machine Learning to understand syntactic patterning of enhancers
+# Machine Learning in non-coding genomic regions
 
 This is a repository to keep track of all work that has been done in the purpose of understanding function in non-coding regions of the genome. 
 

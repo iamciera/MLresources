@@ -8,23 +8,35 @@ Here the inputs are typically “raw” DNA sequence, and convolutional networks
 
 - **Purpose**: Made for predicting the function of non-protein coding DNA sequence. By Function, they mean predicting Protein binding and DNA accessibility (DNAse peaks and chip-seq peaks). 
 - **How**: Uses a convolution layer to capture regulatory motifs (i e single DNA snippets that control the expression of genes, for instance), and a recurrent layer (of the LSTM type) to try to discover a “grammar” for how these single motifs work together (A layer for looking at the distance between motifs). 
-- **Input**: Human [DeepSea](http://deepsea.princeton.edu/job/analysis/create/), 200 bp regions around TF binding Chip-Seq peaks. JASPAR for motifs.
+- **Input/ Training Data**: Human [DeepSea](http://deepsea.princeton.edu/job/analysis/create/), 200 bp regions around TF binding Chip-Seq peaks. JASPAR for motifs.
 - **Implemented on**: Based on Keras/Theano. Combines Convolution Neural Nets (motifs) and Recurrent Neural Nets (distance between motifs).
 
 **Basset – learning the regulatory code of the accessible genome with deep convolutional neural networks** [[github](https://github.com/davek44/Basset)][[gitxiv](http://gitxiv.com/posts/fhET6G7gnBrGS8S9u/basset-learning-the-regulatory-code-of-the-accessible-genome)]
 
--  **Purpose**: Predict cell-specific DNA accessibility and protein binding motifs for specific cell types.
+- **Purpose**: Predict cell-specific DNA accessibility and protein binding motifs for specific cell types.
 - **How**: This package focuses on predicting the accessibility (or “openness”) of the chromatin – the physical packaging of the genetic information (DNA+associated proteins). This can exist in more condensed or relaxed states in different cell types, which is partly influenced by the DNA sequence (not completely, because then it would not differ from cell to cell.)
 - **Input**:
 - **Implemented with**: Based on [Torch](http://torch.ch/)
 
 **DeepSEA – Predicting effects of noncoding variants with deep learning–based sequence model** [[web server](http://deepsea.princeton.edu/job/analysis/create/)][[paper](http://www.nature.com/nmeth/journal/v12/n10/full/nmeth.3547.html)]
 
-Like the packages above, this one also models chromatin accessibility as well as the binding of certain proteins (transcription factors) to DNA and the presence of so-called histone marks that are associated with changes in accessibility. This piece of software seems to focus a bit more explicitly than the others on predicting how single-nucleotide mutations affect the chromatin structure. Published in a high-profile journal (Nature Methods).
+*The method section in this paper is very clear*
+
+- **Purpose**: Predict large-scale chromatin-profiling data, including TF binding, DNase I sensitivity and histone-mark profiles. Like the packages above, this one also models chromatin accessibility as well as the binding of certain proteins (transcription factors) to DNA and the presence of so-called histone marks that are associated with changes in accessibility. This piece of software seems to focus a bit more explicitly than the others on predicting how single-nucleotide mutations affect the chromatin structure.
+- **How**: A deep convolutional network is a type of multilayer neural network. Integrating sequence information from a wide sequence context, learning sequence code at multiple spatial scales with a hierarchical architecture, and multitask joint learning of diverse chromatin factors sharing predictive features. 
+-  **Input/ Training Data**: genome-wide chromatin profiles from the Encyclopedia of DNA Elements (ENCODE) and Roadmap Epigenomics projects. 690 TF binding profiles for 160 different TFs, 125 DHS profiles and 104 histone-mark profiles. Used conservation information ("evolutionary conservation") scores using PhastCons. 
+- **Implemented with** - They made their own implementiation and have a web server, but all the code is hidden. Which sucks and is unuasable outside humans.
 
 **DeepBind – Predicting the sequence specificities of DNA- and RNA-binding proteins by deep learning** [[code](http://tools.genes.toronto.edu/deepbind/)][[paper](http://www.nature.com/nbt/journal/v33/n8/full/nbt.3300.html)]
 
-This is from the group of Brendan Frey in Toronto, and the authors are also involved in the company Deep Genomics. DeepBind focuses on predicting the binding specificities of DNA-binding or RNA-binding proteins, based on experiments such as ChIP-seq, ChIP-chip, RIP-seq,  protein-binding microarrays, and HT-SELEX. Published in a high-profile journal (Nature Biotechnology.)
+*great intro on the challenges of predicting DNA and RNA binding. This is actually quite a nice tool over PWM for predicting TFBS.*
+
+- **Purpose**: DeepBind focuses on predicting the binding specificities of DNA-binding or RNA-binding proteins, based on experiments such as ChIP-seq, ChIP-chip, RIP-seq,  protein-binding microarrays, and HT-SELEX. 
+- **How**
+- **Input/ Training data**: DeepBind uses a set of sequences and, for each sequence, an experimentally determined binding score.
+- 
+
+![](http://www.nature.com/nbt/journal/v33/n8/images_article/nbt.3300-F2.jpg)
 
 **DeeperBind - Enhancing Prediction of Sequence Specificities of DNA Binding Proteins** [[preprint](https://arxiv.org/pdf/1611.05777.pdf)]
 

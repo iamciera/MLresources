@@ -6,7 +6,9 @@ Collection of papers that use machine learning to predict "function" in non-codi
 
 - **Purpose**: Made for predicting the function of non-protein coding DNA sequence. By Function, they mean predicting Protein binding and DNA accessibility (DNAse peaks and chip-seq peaks). 
 - **How**: Uses a convolution layer to capture regulatory motifs (i e single DNA snippets that control the expression of genes, for instance), and a recurrent layer (of the LSTM type) to try to discover a “grammar” for how these single motifs work together (A layer for looking at the distance between motifs). 
-- **Input/ Training Data**: Human [DeepSea](http://deepsea.princeton.edu/job/analysis/create/), 200 bp regions around TF binding Chip-Seq peaks. JASPAR for motifs.
+- **Input/ Training Data**: Human [DeepSea](http://deepsea.princeton.edu/job/analysis/create/), 200 bp regions around TF binding Chip-Seq peaks. JASPAR for motifs.Each 1000-bp DNA sequence is one-hot encoded into a 1000 × 4 binary matrix, with columns corresponding to A,
+G, C and T. "Training, validation and testing sets were downloaded from the DeepSEA website" - but not sure how this was acutually performed.Each sample input consists of a 1000-bp sequence centered on a 200-bp bin that overlaps at least one TF binding ChIPseq
+peak.
 - **Implemented on**: Based on Keras/Theano. Combines Convolution Neural Nets (motifs) and Recurrent Neural Nets (distance between motifs).
 
 **Basset – learning the regulatory code of the accessible genome with deep convolutional neural networks** [[github](https://github.com/davek44/Basset)][[gitxiv](http://gitxiv.com/posts/fhET6G7gnBrGS8S9u/basset-learning-the-regulatory-code-of-the-accessible-genome)]
